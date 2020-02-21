@@ -1,0 +1,27 @@
+directories:
+  output: dist
+  buildResources: assets
+appId: com.uedzen.clouddoc
+productName: 七牛云文档
+copyright: 'Copyright @ 2020 ${author}'
+files:
+  - filter:
+      - build/**/*
+      - node_modules/**/*
+      - settings/**/*
+      - package.json
+extraMetadata:
+  main: ./build/main.js
+extends: null
+win:
+  target:
+    - msi
+    - nsis
+  icon: assets/icon.ico
+  artifactName: '${productName}-Web-Setup-${version}.${ext}'
+  publisherName: uedzen
+nsis:
+  allowToChangeInstallationDirectory: true
+  oneClick: false
+  perMachine: false
+electronVersion: 8.0.1
